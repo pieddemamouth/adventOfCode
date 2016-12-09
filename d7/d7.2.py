@@ -5,7 +5,7 @@ import re
 import heapq
 
 def checkBaB(AbAs,strings):
-    resCheck = True
+    resCheck = False
     for local in AbAs:
         resAba = False
         for aba in local:
@@ -13,12 +13,10 @@ def checkBaB(AbAs,strings):
             for string in strings:
                 if bab in string:
                     resAba = True 
+                    return True
                     break
             if resAba == True:
                 break
-        if resAba == False:
-            resCheck = False
-            break
     return resCheck
 
 
@@ -48,8 +46,6 @@ if __name__ == "__main__":
         if len(abas) > 0:
             if checkBaB(abas,hypernets) == True:
                 cpt += 1
-            else:
-                print("does not support")
                 print(line)
                 print(abas)
     print(cpt)
